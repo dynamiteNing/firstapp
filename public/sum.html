@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+
+<head>
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+    <title>Sum output</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#number_submit").click(function (e) {
+                e.preventDefault();
+                let number = { 'number': $('input[name=num]').val() };
+                $.ajax({
+                    data: number,
+                    url: '/getData',
+                    type: 'post',
+                    method: 'POST',
+                    cache: false,
+                    timeout: 5000,
+                    success: function (message) {
+                        document.getElementById("submit_message").innerHTML = "Answer = " + message.number;
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) { alert(errorThrown); }
+                });
+            });
+        });
+    </script>
+
+    <h1>Sum from 1 to</h1>
+    <input type="number" placeholder="Enter a positive integer" min="1" name="num">
+    <button id="number_submit">Submit</button>
+    <div id="submit_message"></div>
+</body>
+
+</html>

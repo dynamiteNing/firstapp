@@ -1,0 +1,27 @@
+body {
+  background: mintcream;
+  color: navy;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+  margin-top: 20px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+div {
+  margin-top: 20px;
+}
+
+input {
+  font-size: medium;
+  text-align: center;
+}
+
+button {
+  font-size: medium;
+  background-color: lavender;
+}
